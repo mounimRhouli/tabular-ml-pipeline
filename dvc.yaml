@@ -1,0 +1,28 @@
+stages:
+  train:
+    cmd: python -m src.train
+    deps:
+      - src/data_preprocessing.py
+      - src/train.py
+      - src/utils.py
+    params:
+      - data.test_size
+      - data.random_state
+      - model.C
+      - model.max_iter
+    outs:
+      - model/model.joblib
+
+  evaluate:
+    cmd: python -m src.evaluate
+    deps:
+      - model/model.joblib
+      - src/data_preprocessing.py
+      - src/evaluate.py
+      - src/utils.py
+    params:
+      - data.test_size
+      - data.random_state
+    metrics:
+      - model/metrics.json:
+          cache: false

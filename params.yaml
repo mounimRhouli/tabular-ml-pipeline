@@ -1,0 +1,11 @@
+data:
+  test_size: 0.2
+  random_state: 42
+
+model:
+  C: 1.0
+  max_iter: 1000
+
+paths:
+  model: model/model.joblib
+  metrics: model/metrics.json

@@ -1,0 +1,41 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Generated ML artifacts
+model/*
+!model/.gitkeep
+mlruns/
+wandb/
+.dvc/cache/
+.dvc-site-cache/
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local agent configuration
+.agents/
+.codex/
+
+# Original repository history backup (removed after successful migration)
+.git-original-backup/
